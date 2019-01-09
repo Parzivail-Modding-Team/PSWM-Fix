@@ -1,0 +1,18 @@
+[
+{
+  "modid": "pswm-fix",
+  "name": "PSWM-Fix",
+  "description": "Fix some things in Parzi's Star Wars Mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["kaeptmblaubaer1000"],
+  "credits": "Thanks to parzivail for making the mod this is based on",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["starwarsmod"],
+  "requiredMods": ["starwarsmod"],
+  "useDependencyInformation": true
+}
+]

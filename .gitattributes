@@ -1,0 +1,2 @@
+# Make .bat files valid
+*.bat text eol=crlf
