@@ -1,0 +1,3 @@
+[submodule "PSWM"]
+	path = PSWM
+	url = https://github.com/parzivail/StarWarsMod.git
