@@ -23,11 +23,12 @@ repositories {
     maven { url new File(projectDir, "libraries").toURI() }
 }
 
+apply plugin: 'forge'
+
 dependencies {
     compile "com.parzivail.starwarsmod:pswm:1.3.3:dev"
 }
 
-apply plugin: 'forge'
 
 version = new Git(new FileRepositoryBuilder().readEnvironment().findGitDir(projectDir).build()).describe().setTags(true).call()
 group = "com.github.kaeptmblaubaer1000.pswmfix"
