@@ -1,5 +1,7 @@
 (
 cd PSWM
+cp ../gradlew .
+bash ./gradlew wrapper
 bash ./gradlew jar
 )
 mkdir -p libraries/com/parzivail/starwarsmod/pswm/1.3.3

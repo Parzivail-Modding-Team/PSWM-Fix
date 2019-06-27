@@ -2,21 +2,14 @@ package com.github.kb1000.pswmfix;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.item.ItemStack;
 
 import com.parzivail.pswm.StarWarsItems;
 import com.parzivail.pswm.StarWarsMod;
 import com.parzivail.pswm.blocks.BlockCrystalOre;
-import com.parzivail.pswm.items.lightsaber.ItemLightsaberCrystal;
 
-import java.io.File;
 import java.util.Locale;
-import java.util.Random;
 
 @Mod(modid = "pswmfix", version = "1.4.0", dependencies = "required-after:starwarsmod", name = "PSWM-Fix", acceptedMinecraftVersions = "[1.7.10]")
 public class PSWMFix
