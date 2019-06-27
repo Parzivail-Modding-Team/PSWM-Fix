@@ -31,6 +31,7 @@ dependencies {
 
 
 version = new Git(new FileRepositoryBuilder().readEnvironment().findGitDir(projectDir).build()).describe().setTags(true).call()
+version = "1.4.0"
 group = "com.github.kaeptmblaubaer1000.pswmfix"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

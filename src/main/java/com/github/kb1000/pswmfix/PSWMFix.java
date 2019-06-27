@@ -18,7 +18,7 @@ import java.io.File;
 import java.util.Locale;
 import java.util.Random;
 
-@Mod(modid = "pswmfix", version = "1.4.0", dependencies = "required-after:starwarsmod")
+@Mod(modid = "pswmfix", version = "1.4.0", dependencies = "required-after:starwarsmod", name = "PSWM-Fix", acceptedMinecraftVersions = "[1.7.10]")
 public class PSWMFix
 {
 	@Mod.EventHandler
