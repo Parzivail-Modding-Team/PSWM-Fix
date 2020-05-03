@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 
 import java.util.Locale;
 
-@Mod(modid = "pswmfix", version = "1.4.0", dependencies = "required-after:starwarsmod", name = "PSWM-Fix", acceptedMinecraftVersions = "[1.7.10]", certificateFingerprint = "8963f7dbea11ab8838eafb2d2e64dcb78d774997")
+@Mod(modid = "pswmfix", version = "1.4.1", dependencies = "required-after:starwarsmod", name = "PSWM-Fix", acceptedMinecraftVersions = "[1.7.10]", certificateFingerprint = "8963f7dbea11ab8838eafb2d2e64dcb78d774997")
 public class PSWMFix {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
