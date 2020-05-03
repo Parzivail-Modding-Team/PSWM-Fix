@@ -41,8 +41,7 @@ minecraft {
     runDir = "eclipse"
 }
 
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -52,11 +51,21 @@ processResources
         include 'mcmod.info'
 
         // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version': project.version, 'mcversion': project.minecraft.version
     }
 
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+jar {
+    manifest {
+        attributes "FMLCorePlugin": "com.github.kb1000.pswmfix.loading.PSWMFixLoadingPlugin"
+    }
+}
+
+makeStart {
+    addResource(new File(projectDir, "GradleStart.java").toURI().toURL(), "GradleStart.java")
 }
