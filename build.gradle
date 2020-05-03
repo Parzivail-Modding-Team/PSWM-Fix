@@ -69,3 +69,24 @@ jar {
 makeStart {
     addResource(new File(projectDir, "GradleStart.java").toURI().toURL(), "GradleStart.java")
 }
+
+if (hasProperty("signingKeyStorePassword")) {
+    task signJar << {
+        def signedDir = new File("$buildDir/signed")
+        signedDir.mkdirs()
+
+        ant.signjar(
+                destDir: signedDir.absolutePath,
+                jar: jar.archivePath,
+                alias: project.getProperty("signingKeyAlias"),
+                storetype: "jks",
+                keystore: project.getProperty("signingKeyStore"),
+                storepass: project.getProperty("signingKeyStorePassword"),
+                verbose: true,
+                preservelastmodified: true
+        )
+    }
+    signJar {
+        dependsOn assemble
+    }
+}
