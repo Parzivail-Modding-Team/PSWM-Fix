@@ -15,7 +15,8 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-        classpath 'org.eclipse.jgit:org.eclipse.jgit:5.2.0.201812061821-r'
+        classpath 'org.eclipse.jgit:org.eclipse.jgit:5.9.0.202009080501-r'
+        classpath 'org.apache.commons:commons-lang3:3.3.2'
     }
 }
 
@@ -30,8 +31,7 @@ dependencies {
 }
 
 
-version = new Git(new FileRepositoryBuilder().readEnvironment().findGitDir(projectDir).build()).describe().setTags(true).call()
-version = "1.4.1"
+version = new Git(new FileRepositoryBuilder().readEnvironment().findGitDir(projectDir).build()).describe().setTags(true).call().replaceFirst("^v*", "")
 group = "com.github.kb1000"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
