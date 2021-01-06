@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;
 
+@SuppressWarnings("unused")
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.TransformerExclusions("com.github.kb1000.pswmfix.loading")
 @IFMLLoadingPlugin.Name("PSWM-Fix Core (only modifies PSWM)")
