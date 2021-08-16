@@ -1,12 +1,9 @@
-import org.eclipse.jgit.api.Git
-import org.eclipse.jgit.storage.file.FileRepositoryBuilder
-
 buildscript {
     repositories {
         mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "https://maven.minecraftforge.net/"
         }
         maven {
             name = "sonatype"
@@ -15,30 +12,19 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-        classpath 'org.eclipse.jgit:org.eclipse.jgit:5.9.0.202009080501-r'
-        classpath 'org.apache.commons:commons-lang3:3.3.2'
     }
-}
-
-repositories {
-    maven { url new File(projectDir, "libraries").toURI() }
 }
 
 apply plugin: 'forge'
 
-dependencies {
-    compile "com.parzivail.starwarsmod:pswm:1.3.3:dev"
-}
 
-
-version = new Git(new FileRepositoryBuilder().readEnvironment().findGitDir(projectDir).build()).describe().setTags(true).call().replaceFirst("^v*", "")
+version = "1.5.0"
 group = "com.github.kb1000"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 minecraft {
-    version = "1.7.10-10.13.4.1558-1.7.10"
-    runDir = "eclipse"
+    version = "1.7.10-10.13.4.1614-1.7.10"
 }
 
 processResources {
@@ -60,33 +46,6 @@ processResources {
     }
 }
 
-jar {
-    manifest {
-        attributes "FMLCorePlugin": "com.github.kb1000.pswmfix.loading.PSWMFixLoadingPlugin"
-    }
-}
-
 makeStart {
     addResource(new File(projectDir, "GradleStart.java").toURI().toURL(), "GradleStart.java")
-}
-
-if (hasProperty("signingKeyStorePassword")) {
-    task signJar << {
-        def signedDir = new File("$buildDir/signed")
-        signedDir.mkdirs()
-
-        ant.signjar(
-                destDir: signedDir.absolutePath,
-                jar: jar.archivePath,
-                alias: project.getProperty("signingKeyAlias"),
-                storetype: "jks",
-                keystore: project.getProperty("signingKeyStore"),
-                storepass: project.getProperty("signingKeyStorePassword"),
-                verbose: true,
-                preservelastmodified: true
-        )
-    }
-    signJar {
-        dependsOn assemble
-    }
 }

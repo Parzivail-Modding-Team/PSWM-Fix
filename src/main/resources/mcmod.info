@@ -1,8 +1,8 @@
 [
 {
-  "modid": "pswm-fix",
-  "name": "PSWM-Fix",
-  "description": "Fix some things in Parzi's Star Wars Mod",
+  "modid": "pswmfix",
+  "name": "PSWM-Fix (Deprecated, please remove)",
+  "description": "Does nothing anymore (used to fix bugs in Parzi's Star Wars Mod)",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
@@ -12,7 +12,6 @@
   "logoFile": "",
   "screenshots": [],
   "dependencies": ["starwarsmod"],
-  "requiredMods": ["starwarsmod"],
-  "useDependencyInformation": true
+  "requiredMods": ["starwarsmod"]
 }
 ]
